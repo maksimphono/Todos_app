@@ -1,9 +1,8 @@
-import { useEffect } from "react";
 import {useState, useRef} from "react";
-import { alignPropType } from "react-bootstrap/esm/types.js";
 import TodosScene from "../scenes/TodosScene.jsx"
 import ModalAlert from "./modal_alert.jsx"
 import Modal_NewTask from "./Modal_NewTask.jsx"
+import Modal_UpdateTask from "./Modal_UpdateTask.jsx"
 import GET_all_tasks from "../forms/GET_all_tasks.js"
 import DELETE_task_by_id from "../forms/DELETE_task_by_id.js"
 import {modalComplete, modalDelete, modalDeleteSuccess} from "./alert_modals.js"
@@ -46,10 +45,11 @@ export default function Todos(props){
 
     const handleEditTask = event => {
         const todoIndex = $(event.target).attr("data-todo-index")
+        console.log("index : ", todoIndex);
 
         setUpdateTask({
             show : true,
-            todoIndex, 
+            todoIndex : todoIndex,
             title : todos[todoIndex].title, 
             description : todos[todoIndex].description
         });
