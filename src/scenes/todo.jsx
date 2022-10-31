@@ -17,7 +17,7 @@ export default function TodoScene(props){
                 </div>
                 <ButtonGroup className="button-group">
                     <Button variant="success" data-title={props.title} className = "btn h-100" onClick={props.handleCompleteTask}>Complete</Button>
-                    <Button variant="primary" className = "btn" onClick={props.handleEditTask}>Edit</Button>
+                    <Button variant="primary" data-todo-index={props._key} className = "btn" onClick={props.handleEditTask}>Edit</Button>
                     <Button variant="outline" data-todo-index={props._key} className = "btn-outline-danger" onClick={props.handleDeleteTask}>Delete</Button>
                 </ButtonGroup>
             </Accordion.Header>

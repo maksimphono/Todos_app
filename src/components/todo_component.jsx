@@ -23,6 +23,7 @@ export default function Todos(props){
     const [showAlert, setShowAlert] = useState(false);
     const [modal, setModal] = useState({title : "Warning", body : "", buttons : []});
     const [newTask, setNewTask] = useState(false);
+    const [updateTask, setUpdateTask] = useState({show : false, todoIndex : 0, title : "", description : ""});
     let todosNum = useRef(todos.length);
 
     //useEffect(clearTodos, []);
@@ -44,8 +45,14 @@ export default function Todos(props){
     };
 
     const handleEditTask = event => {
-        event.preventDefault();
-        //alert("Edit");
+        const todoIndex = $(event.target).attr("data-todo-index")
+
+        setUpdateTask({
+            show : true,
+            todoIndex, 
+            title : todos[todoIndex].title, 
+            description : todos[todoIndex].description
+        });
     };
 
     const handleDeleteTask = event => {
@@ -96,8 +103,14 @@ export default function Todos(props){
         <Modal_NewTask
             show = {newTask}
             handleShowHide = {(e) => setNewTask(false)}
-        >
-        </Modal_NewTask>
+        />
+        <Modal_UpdateTask
+            show = {updateTask.show}
+            title = {updateTask.title}
+            description = {updateTask.description}
+            todoIndex = {updateTask.todoIndex}
+            handleShowHide = {(e) => setUpdateTask(false)}
+        />
         </>
     );
 }
