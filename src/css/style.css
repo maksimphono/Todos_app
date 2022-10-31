@@ -1,0 +1,23 @@
+body {
+    background-color:#0000;
+    overflow-y: auto;
+}
+html {
+    background-image: linear-gradient(45deg, #f7e99e, #aba377);
+}
+
+#root {
+    height: 100%;
+}
+
+#new_task {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #d7d7ff;
+}
+
+#new_task:hover {
+    background-color: #9b9bd7;
+    box-shadow: 0px 0px 6px rgb(103, 103, 103);
+}

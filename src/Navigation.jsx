@@ -1,13 +1,14 @@
-import logo from './logo.svg';
+import todo_logo from './assets/todo_logo.svg';
 import TodosComponent from "./components/todo_component.jsx"
 import Container from 'react-bootstrap/Container';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import "./css/nav_style.css";
 
 function Navigation() {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Todo App</Navbar.Brand>
+        <Navbar.Brand href="#home"><img src = {todo_logo}/> Todo App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

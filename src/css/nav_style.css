@@ -1,0 +1,19 @@
+nav.navbar {
+    height: 12vh;
+    background-color: #5e593c;
+    border-bottom: 3px solid rgb(63, 60, 53);
+}
+
+.nav-link {
+    margin-inline: 1.2em;
+    font-size: 1.5rem;
+    color:rgb(220, 217, 211);
+}
+
+.navbar-brand {
+    font-size: 1.9rem;
+}
+
+.navbar-brand > img {
+    height: 40px;
+}

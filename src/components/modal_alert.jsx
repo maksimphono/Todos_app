@@ -2,8 +2,6 @@ import {Modal, Button, ButtonGroup} from "react-bootstrap"
 import {useState, React} from "react"
 
 export default function ModalScene(props){
-    const [show, setShow] = useState(true);
-
     return (
         <Modal show={props.show} onHide={props.handleShowHide}>
             <Modal.Header closeButton>

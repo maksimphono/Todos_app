@@ -4,7 +4,6 @@ import $ from "jquery"
 import UPDATE_task from "../forms/UPDATE_task"
 
 export default function Modal_NewTask(props){
-
     const onSubmit = event => {
         const title = $("#task_title").val() || props.title;
         const description = $("#task_description").val() || props.description;

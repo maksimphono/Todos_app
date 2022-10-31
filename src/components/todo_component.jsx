@@ -8,24 +8,12 @@ import DELETE_task_by_id from "../forms/DELETE_task_by_id.js"
 import {modalComplete, modalDelete, modalDeleteSuccess} from "./alert_modals.js"
 import $ from "jquery";
 
-function Todo(title, description){
-    return {title, description};
-}
-
-function clearTodos(e){
-    window.localStorage.removeItem("todos");
-    console.table(window.localStorage.getItem("todos"));
-}
-
 export default function Todos(props){
     const [todos, setTodos] = useState(GET_all_tasks(null));
     const [showAlert, setShowAlert] = useState(false);
     const [modal, setModal] = useState({title : "Warning", body : "", buttons : []});
     const [newTask, setNewTask] = useState(false);
     const [updateTask, setUpdateTask] = useState({show : false, todoIndex : 0, title : "", description : ""});
-    let todosNum = useRef(todos.length);
-
-    //useEffect(clearTodos, []);
 
     const handleCompleteTask = event => {
         const data = {
@@ -56,7 +44,6 @@ export default function Todos(props){
     };
 
     const handleDeleteTask = event => {
-        //alert("Delete task");
         const data = {
             todoIndex : $(event.target).attr("data-todo-index")
         }
@@ -67,7 +54,6 @@ export default function Todos(props){
     };
 
     const handleDeleteWarning = event => {
-        event.preventDefault();
         setModal(
             modalDelete(
                 event, handleCompleteTask, handleDeleteTask
@@ -94,7 +80,6 @@ export default function Todos(props){
             title={modal.title}
             buttons = {
                 modal.buttons
-                //[ModalBtn("primary", handleModalShowHide, "OK")]
             }
             body = {modal.body}
             handleShowHide = {handleModalShowHide}

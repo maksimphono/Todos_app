@@ -1,4 +1,5 @@
 import React from 'react';
+import todo_icon from "../assets/todo_icon.svg";
 import Accordion from "react-bootstrap/Accordion"
 import {Button, ButtonGroup} from "react-bootstrap"
 import "../css/todo_style.css"
@@ -12,10 +13,10 @@ export default function TodoScene(props){
         <Accordion.Item className="accordion-item" eventKey = {props._key}>
             <Accordion.Header>
                 <div>
-                    <h2>{props.title || "New todo"}</h2>
+                    <div style={{display: "flex", flexDirection : "row"}}><img style={{height: "2rem", marginRight: ".7rem"}} src = {todo_icon}/><h2>{props.title || "New todo"}</h2></div>
                     <p>Since: {date}</p>
                 </div>
-                <ButtonGroup className="button-group">
+                <ButtonGroup>
                     <Button variant="success" data-title={props.title} className = "btn h-100" onClick={props.handleCompleteTask}>Complete</Button>
                     <Button variant="primary" data-todo-index={props._key} className = "btn" onClick={props.handleEditTask}>Edit</Button>
                     <Button variant="outline" data-todo-index={props._key} className = "btn-outline-danger" onClick={props.handleDeleteTask}>Delete</Button>
