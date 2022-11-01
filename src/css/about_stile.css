@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+section {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: .4em 1em;
+    box-shadow: 0 0 5px black;
+    border-radius: .5em;
+    background-color: #fff6;
+}
+
+p {
+    word-wrap: break-word;
+    font-family: 'Muli', monospace;
+    font-size: 1.2em;
+}
+
+.btn-group{
+    margin-bottom: 0%;
+}
+
+.btn-group > button {
+    font-size: 1em;
+    height: max-content;
+    width: fit-content;
+}

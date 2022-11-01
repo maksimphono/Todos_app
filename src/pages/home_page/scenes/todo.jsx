@@ -1,8 +1,8 @@
 import React from 'react';
-import todo_icon from "../assets/todo_icon.svg";
+import todo_icon from "../../../assets/todo_icon.svg";
 import Accordion from "react-bootstrap/Accordion"
 import {Button, ButtonGroup} from "react-bootstrap"
-import "../css/todo_style.css"
+import "../../../css/todo_style.css"
 
 export default function TodoScene(props){
     let date = props.date; //new Date(props.date).toISOString();

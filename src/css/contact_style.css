@@ -1,0 +1,8 @@
+textarea.form-control {
+    display: block;
+    min-height: 5em;
+}
+
+button[type=submit] {
+    min-width: 15%;
+}

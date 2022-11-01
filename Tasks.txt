@@ -1,1 +1,1 @@
-1) Make tasks not open when button Complete/Edit/Delete is pressed
+1) Create Layout.jsx component to navigate through "pages"

@@ -2,7 +2,7 @@ import React from 'react';
 import Accordion from "react-bootstrap/Accordion"
 import {Button, Container} from "react-bootstrap"
 import TodoScene from "./todo"
-import "../css/style.css"
+import "../../../css/style.css"
 
 export default function TodosScene(props){
     return (
