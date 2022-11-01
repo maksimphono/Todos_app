@@ -12,7 +12,7 @@ export default function About (props){
                     This is simple application, that can help user to maintain daily tasks.<br/>
                     If you have task to do, just click <Button variant="secondary">+ New</Button> button, then name and describe your task.<br/>
                     After that task with current date will be added to tasks table. You can <b>complete</b>, <b>edit</b> and <b>delete</b> task by clicking corresponding buttons
-                    <ButtonGroup><Button variant="success">Complete</Button><Button variant="primary">Edit</Button><Button variant="" className="btn btn-outline-danger">Delete</Button></ButtonGroup>
+                    <ButtonGroup className="about"><Button variant="success">Complete</Button><Button variant="primary">Edit</Button><Button variant="" className="btn btn-outline-danger">Delete</Button></ButtonGroup>
                     The app use <b>local storage</b> in your browser to store data about tasks, so if you change device, you will not be able to see your tasks.
                 </p>
             </section>

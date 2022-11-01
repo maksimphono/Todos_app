@@ -15,11 +15,11 @@ p {
     font-size: 1.2em;
 }
 
-.btn-group{
+.btn-group.about {
     margin-bottom: 0%;
 }
 
-.btn-group > button {
+.btn-group.about > button {
     font-size: 1em;
     height: max-content;
     width: fit-content;

@@ -2,8 +2,8 @@
 
 .accordion-item {
     background-color: #fcfcc3;
+    
 }
-
 .accordion-button {
     display: flex;
     justify-content: space-between;
@@ -23,6 +23,7 @@
 
 .btn-group > button {
     font-size: 1.3em;
+    height: 100%;
 }
 
 .btn-group > button:first-child, 
