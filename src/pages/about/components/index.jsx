@@ -21,7 +21,7 @@ export default function About (props){
                 <p>
                     Hi. My name is Maksim, i'm junior front end developer from Russia.<br/>
                     This simple application is my university project. I hope it will be usefull for you.<br/>
-                    If it was, or you have any suggestions, you can send me a messege by link <b>"Contact"</b> upper in navigation bar.<br/>
+                    If it was, or you have any suggestions, you can send me a message by link <b>"Contact"</b> upper in navigation bar.<br/>
                     Thank you for using my app.&#128513;
                 </p>
             </section>
