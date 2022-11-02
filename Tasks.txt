@@ -1,1 +1,1 @@
-1) Create Layout.jsx component to navigate through "pages"
+1) Read article about github deploy keys and try to deploy project
