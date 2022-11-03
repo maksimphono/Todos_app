@@ -11,7 +11,7 @@ export default function TodoScene(props){
     useEffect(() => {
         console.log("Render component 'Todo' . It's props :");
         console.table(props);
-    }, []);
+    }, [props]);
 
     return (
         <Accordion.Item className="accordion-item" eventKey = {props._key}>
