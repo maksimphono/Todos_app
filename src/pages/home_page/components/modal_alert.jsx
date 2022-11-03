@@ -1,7 +1,7 @@
 import {Modal, Button, ButtonGroup} from "react-bootstrap"
-import {useState, React} from "react"
+import {memo, React} from "react"
 
-export default function ModalScene(props){
+function ModalScene(props){
     return (
         <Modal show={props.show} onHide={props.handleShowHide}>
             <Modal.Header closeButton>
@@ -18,3 +18,5 @@ export default function ModalScene(props){
         </Modal>
     )
 }
+
+export default memo(ModalScene);

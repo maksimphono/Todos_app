@@ -1,16 +1,16 @@
 import {Modal, Button, ButtonGroup, Form} from "react-bootstrap"
-import {useState, React} from "react"
+import {React, memo} from "react"
 import $ from "jquery"
 import UPDATE_task from "../forms/UPDATE_task"
 
-export default function Modal_NewTask(props){
+function Modal_UpdateTask(props){
     const onSubmit = event => {
         const title = $("#task_title").val() || props.title;
         const description = $("#task_description").val() || props.description;
         const todoIndex = props.todoIndex;
         UPDATE_task({title, description, todoIndex});
         props.handleShowHide(event);
-    }
+    };
 
     return (
         <Modal show={props.show} onHide={props.handleShowHide}>
@@ -18,7 +18,7 @@ export default function Modal_NewTask(props){
                 <Modal.Title>Edit task {props.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit = {onSubmit}>
+                <Form onSubmit = {onSubmit} target="_blank">
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Edit task Title:</Form.Label>
                         <Form.Control id="task_title" controlId="task_title" type="text" placeholder={props.title} />
@@ -34,3 +34,5 @@ export default function Modal_NewTask(props){
         </Modal>
     )
 }
+
+export default memo(Modal_UpdateTask);

@@ -22,7 +22,7 @@ export default function TodoScene(props){
                     <p>Since: {date}</p>
                 </div>
                 <ButtonGroup>
-                    <Button variant="success" data-title={props.title} className = "btn" onClick={props.handleCompleteTask}>Complete</Button>
+                    <Button variant="success" data-title={props.title} data-todo-index={props._key} className = "btn" onClick={props.handleCompleteTask}>Complete</Button>
                     <Button variant="primary" data-todo-index={props._key} className = "btn" onClick={props.handleEditTask}>Edit</Button>
                     <Button variant="outline" data-todo-index={props._key} className = "btn-outline-danger" onClick={props.handleDeleteTask}>Delete</Button>
                 </ButtonGroup>

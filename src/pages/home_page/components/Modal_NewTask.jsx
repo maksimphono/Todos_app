@@ -1,10 +1,9 @@
 import {Modal, Button, ButtonGroup, Form} from "react-bootstrap"
-import {useState, React} from "react"
+import {React, memo} from "react"
 import $ from "jquery"
 import POST_new_task from "../forms/POST_new_task"
 
-export default function Modal_NewTask(props){
-
+function Modal_NewTask(props){
     const onSubmit = event => {
         const title = $("#task_title").val();
         const description = $("#task_description").val();
@@ -12,7 +11,7 @@ export default function Modal_NewTask(props){
 
         POST_new_task(JSON.stringify({title, description, date}));
         props.handleShowHide(event);
-    }
+    };
 
     return (
         <Modal show={props.show} onHide={props.handleShowHide}>
@@ -36,3 +35,5 @@ export default function Modal_NewTask(props){
         </Modal>
     )
 }
+
+export default memo(Modal_NewTask);

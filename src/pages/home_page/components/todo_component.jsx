@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useCallback, memo} from "react";
 import TodosScene from "../scenes/TodosScene.jsx"
 import ModalAlert from "./modal_alert.jsx"
 import Modal_NewTask from "./Modal_NewTask.jsx"
@@ -8,8 +8,8 @@ import DELETE_task_by_id from "../forms/DELETE_task_by_id.js"
 import {modalComplete, modalDelete, modalDeleteSuccess} from "./alert_modals.js"
 import $ from "jquery";
 
-export default function Todos(props){
-    const [todos, setTodos] = useState(GET_all_tasks(null));
+export default memo(function Todos(props){
+    const [todos, setTodos] = useState([]);
     const [showAlert, setShowAlert] = useState(false);
     const [modal, setModal] = useState({title : "Warning", body : "", buttons : []});
     const [newTask, setNewTask] = useState(false);
@@ -22,13 +22,14 @@ export default function Todos(props){
             if (todos[0] != null)
                 console.log("todos[0].title : ", todos[0].title);
         }
-        
+
+        setTodos(GET_all_tasks(null));
     }, []);
 
     const handleCompleteTask = event => {
         const data = {
             todoIndex : $(event.target).attr("data-todo-index")
-        }
+        };
         DELETE_task_by_id(data);
         setModal(modalComplete(event));
         setShowAlert(true);
@@ -36,10 +37,10 @@ export default function Todos(props){
         setTodos(GET_all_tasks(null));
     };
 
-    const handleNewTask = (event) => {
+    const handleNewTask = useCallback((event) => {
         event.preventDefault();
         setNewTask(true);
-    };
+    }, [newTask]);
 
     const handleEditTask = event => {
         const todoIndex = $(event.target).attr("data-todo-index")
@@ -63,18 +64,18 @@ export default function Todos(props){
         setTodos(GET_all_tasks(null));
     };
 
-    const handleDeleteWarning = event => {
+    const handleDeleteWarning = useCallback(event => {
         setModal(
             modalDelete(
                 event, handleCompleteTask, handleDeleteTask
             )
         );
         setShowAlert(!showAlert);
-    };
+    }, [showAlert]);
 
-    const handleModalShowHide = event => {
+    const handleModalShowHide = useCallback(event => {
         setShowAlert(!showAlert);
-    };
+    }, [showAlert]);
 
     return (
         <>
@@ -108,4 +109,4 @@ export default function Todos(props){
         />
         </>
     );
-}
+})
