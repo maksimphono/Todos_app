@@ -18,8 +18,9 @@ export default function TodosScene(props){
             <h1 className="display-4 d-flex m-auto mt-3">{props.todos.length && "You currently have these task to do:" || "You don't have tasks now, relax"}</h1>
             <Accordion className="todos-accordion mt-3" defaultActiveKey="0">
                 {(props.todos != null) && props.todos.map((todo, i) => {
-                    todo != null &&
-                    <TodoScene
+                    if (todo != null) {
+                        console.log("Ready to render todo ", todo.title, todo.description);
+                        <TodoScene
                         key = {i}
                         _key = {i}
                         title = {todo.title}
@@ -28,7 +29,9 @@ export default function TodosScene(props){
                         handleCompleteTask = {props.handleCompleteTask}
                         handleEditTask = {props.handleEditTask}
                         handleDeleteTask = {props.handleDeleteTask} 
-                    />
+                        />
+                    }
+                    
                     }
                 )}
             </Accordion>
