@@ -20,9 +20,9 @@ export default function TodosScene(props){
                 <TodoScene
                     key = {0}
                     _key = {0}
-                    title = {todos[0].title}
-                    date = {todos[0].date} 
-                    description = {todos[0].description}
+                    title = {props.todos[0].title}
+                    date = {props.todos[0].date} 
+                    description = {props.todos[0].description}
                     handleCompleteTask = {props.handleCompleteTask}
                     handleEditTask = {props.handleEditTask}
                     handleDeleteTask = {props.handleDeleteTask} 
