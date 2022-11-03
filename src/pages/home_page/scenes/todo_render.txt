@@ -1,0 +1,17 @@
+{(props.todos != null) && props.todos.map((todo, i) => {
+    if (todo != null) {
+        console.log("Ready to render todo ", todo.title, todo.description);
+        <TodoScene
+        key = {i}
+        _key = {i}
+        title = {todo.title}
+        date = {todo.date} 
+        description = {todo.description}
+        handleCompleteTask = {props.handleCompleteTask}
+        handleEditTask = {props.handleEditTask}
+        handleDeleteTask = {props.handleDeleteTask} 
+        />
+    }
+    
+    }
+)}
