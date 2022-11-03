@@ -1,18 +1,9 @@
-import React, {useEffect} from 'react';
-import Accordion from "react-bootstrap/Accordion"
-import {Button, Container} from "react-bootstrap"
+import React, {memo} from 'react';
+import {Accordion, Button, Container} from "react-bootstrap"
 import TodoScene from "./Todo.jsx"
 import "../../../css/style.css"
 
-export default function TodosScene(props){
-
-    useEffect(() => {
-        console.log("Render component 'TodosScene', it's props : ")
-        console.table(props);
-        console.log("Todos : ");
-        console.log(props.todos);
-    }, [props.todos]);
-
+export default memo(function TodosScene(props){
     return (
         <Container>
             <div className="d-flex flex-row justify-content-between align-items-end">
@@ -26,7 +17,6 @@ export default function TodosScene(props){
                 </Button>
             </div>
             <Accordion className="todos-accordion mt-3" defaultActiveKey="0">
-                {console.log("Ready to render 'Todo' with props :", props.todos[0])}
                 { props.todos.map((todo, i) => (
                         <TodoScene
                             key = {i}
@@ -44,4 +34,4 @@ export default function TodosScene(props){
             <Button id = "new_task" variant = "light" onClick={props.handleNewTask}>+ New</Button>
         </Container>
     );
-}
+})
