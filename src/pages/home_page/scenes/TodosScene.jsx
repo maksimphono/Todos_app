@@ -9,7 +9,8 @@ export default function TodosScene(props){
         <Container>
             <h1 className="display-4 d-flex m-auto mt-3">{props.todos.length && "You currently have these task to do:" || "You don't have tasks now, relax"}</h1>
             <Accordion className="todos-accordion mt-3" defaultActiveKey="0">
-                {props.todos.map((todo, i) => 
+                {(props.todos != null) && props.todos.map((todo, i) => {
+                    todo != null &&
                     <TodoScene
                         key = {i}
                         _key = {i}
@@ -20,6 +21,7 @@ export default function TodosScene(props){
                         handleEditTask = {props.handleEditTask}
                         handleDeleteTask = {props.handleDeleteTask} 
                     />
+                    }
                 )}
             </Accordion>
             <Button id = "new_task" variant = "light" onClick={props.handleNewTask}>+ New</Button>

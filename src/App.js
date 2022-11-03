@@ -4,7 +4,7 @@ import ContactComponent from "./pages/contact/components/index.jsx"
 import Navigation from "./Navigation"
 import Layout from "./pages/Layout.jsx";
 //import TodosComponent from "./pages/home_page/components/todo_component.jsx"
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter, Routes, Route} from "react-router-dom";
 //import './App.css';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
   //   </>
   // );
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element = {<Layout />}>
           <Route index element = {<TodosComponent />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/contact" element = {<ContactComponent />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

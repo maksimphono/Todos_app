@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import {useState, useEffect} from "react";
 import TodosScene from "../scenes/TodosScene.jsx"
 import ModalAlert from "./modal_alert.jsx"
 import Modal_NewTask from "./Modal_NewTask.jsx"
@@ -14,6 +14,16 @@ export default function Todos(props){
     const [modal, setModal] = useState({title : "Warning", body : "", buttons : []});
     const [newTask, setNewTask] = useState(false);
     const [updateTask, setUpdateTask] = useState({show : false, todoIndex : 0, title : "", description : ""});
+
+    useEffect(() => {
+        console.log("todos : ", todos);
+        if (todos != null) {
+            console.log("todos[0] :", todos[0]);
+            if (todos[0] != null)
+                console.log("todos[0].title : ", todos[0].title);
+        }
+        
+    }, []);
 
     const handleCompleteTask = event => {
         const data = {
