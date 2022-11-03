@@ -17,6 +17,7 @@ export default function TodosScene(props){
         <Container>
             <h1 className="display-4 d-flex m-auto mt-3">{props.todos.length && "You currently have these task to do:" || "You don't have tasks now, relax"}</h1>
             <Accordion className="todos-accordion mt-3" defaultActiveKey="0">
+                {console.log("Ready to render 'Todo' with props :", todos[0])}
                 <TodoScene
                     key = {0}
                     _key = {0}
