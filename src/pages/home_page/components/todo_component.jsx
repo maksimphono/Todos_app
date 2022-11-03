@@ -44,7 +44,7 @@ export default memo(function Todos(props){
 
     const handleEditTask = event => {
         const todoIndex = $(event.target).attr("data-todo-index")
-
+        console.log("Index to edit :", todoIndex);
         setUpdateTask({
             show : true,
             todoIndex : todoIndex,

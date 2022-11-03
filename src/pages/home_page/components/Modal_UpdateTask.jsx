@@ -1,16 +1,16 @@
-import {Modal, Button, ButtonGroup, Form} from "react-bootstrap"
-import {React, memo} from "react"
+import {Modal, Button, Form} from "react-bootstrap"
+import {React, memo, useCallback} from "react"
 import $ from "jquery"
 import UPDATE_task from "../forms/UPDATE_task"
 
 function Modal_UpdateTask(props){
-    const onSubmit = event => {
+    const onSubmit = useCallback(event => {
         const title = $("#task_title").val() || props.title;
         const description = $("#task_description").val() || props.description;
         const todoIndex = props.todoIndex;
         UPDATE_task({title, description, todoIndex});
         props.handleShowHide(event);
-    };
+    }, [$("#task_title").val(), $("#task_description").val(), props.todoIndex]);
 
     return (
         <Modal show={props.show} onHide={props.handleShowHide}>
@@ -35,4 +35,4 @@ function Modal_UpdateTask(props){
     )
 }
 
-export default memo(Modal_UpdateTask);
+export default Modal_UpdateTask;

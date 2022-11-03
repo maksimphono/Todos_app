@@ -21,7 +21,6 @@ export default memo(function TodoScene(props){
                 </ButtonGroup>
             </Accordion.Header>
             <Accordion.Body>
-                {console.log("Render process... (Accordion.Body)")}
                 <h4>Description:</h4>
                 <p>{props.description || "None"}</p>
             </Accordion.Body>
