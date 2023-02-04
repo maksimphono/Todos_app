@@ -1,5 +1,5 @@
 import todo_logo from './assets/todo_logo.svg';
-import TodosComponent from "./pages/home_page/components/todo_component.jsx"
+import TodosComponent from "./components/ui/todo_component.jsx"
 import Container from 'react-bootstrap/Container';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import { BrowserRouter, Route, Link } from 'react-router-dom';

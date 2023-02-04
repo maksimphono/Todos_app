@@ -1,7 +1,7 @@
 import {Modal, Button, Form} from "react-bootstrap"
 import {React, memo, useCallback} from "react"
 import $ from "jquery"
-import UPDATE_task from "../../../pages/home_page/forms/UPDATE_task"
+import UPDATE_task from "../../pages/home_page/forms/UPDATE_task"
 
 function Modal_UpdateTask(props){
     const onSubmit = useCallback(event => {

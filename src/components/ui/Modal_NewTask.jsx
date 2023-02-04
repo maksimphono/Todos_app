@@ -1,7 +1,7 @@
 import {Modal, Button, ButtonGroup, Form} from "react-bootstrap"
 import {React, memo, useCallback} from "react"
 import $ from "jquery"
-import POST_new_task from "../../../pages/home_page/forms/POST_new_task"
+import POST_new_task from "../../pages/home_page/forms/POST_new_task"
 
 function Modal_NewTask(props){
     const onSubmit = useCallback(event => {
