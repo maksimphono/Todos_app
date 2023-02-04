@@ -1,10 +1,10 @@
 import {useState, useEffect, useCallback, memo} from "react";
-import TodosScene from "../scenes/TodosScene.jsx"
+import TodosScene from "../../../pages/home_page/scenes/TodosScene.jsx"
 import ModalAlert from "./modal_alert.jsx"
 import Modal_NewTask from "./Modal_NewTask.jsx"
 import Modal_UpdateTask from "./Modal_UpdateTask.jsx"
-import GET_all_tasks from "../forms/GET_all_tasks.js"
-import DELETE_task_by_id from "../forms/DELETE_task_by_id.js"
+import GET_all_tasks from "../../../pages/home_page/forms/GET_all_tasks.js"
+import DELETE_task_by_id from "../../../pages/home_page/forms/DELETE_task_by_id.js"
 import {modalComplete, modalDelete, modalDeleteSuccess} from "./alert_modals.js"
 import $ from "jquery";
 
